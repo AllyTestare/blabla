@@ -9,6 +9,11 @@ Alpine.start();
 window.Vue = require("vue").default;
 import moment from "moment";
 
+
+import Gate from "./Gate";
+Vue.prototype.$gate = new Gate(window.user);
+
+
 import Form from "vform";
 window.Form = Form;
 import {
@@ -100,6 +105,8 @@ const routes = [
         component: require("./components/Profile.vue").default,
     },
     { path: "/users", component: require("./components/Users.vue").default },
+    { path: "/developer", component: require("./components/Developer.vue").default },
+    { path: "*", component: require("./components/NotFound.vue").default },
 ];
 
 // const router = new VueRouter(routes)
@@ -128,8 +135,16 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+Vue.component(
+    "not-found",
+    require("./components/NotFound.vue").default
+);
+
 const app = new Vue({
     el: "#app",
+    // mounted() {
+    //             console.log(window.user);
+    //         },
     router,
     data: {
         search: "",
@@ -150,3 +165,10 @@ const app = new Vue({
 // Vue.use(VeeValidate);
 
 // http request
+// const app2 = new Vue({
+//     el: '#app',
+
+//     mounted() {
+//         console.log(window.user);
+//     }
+// })

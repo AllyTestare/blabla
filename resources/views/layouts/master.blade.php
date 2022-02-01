@@ -61,6 +61,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>
                 {{ Auth::user()->name }}
               </p>
+                  <span class="d-block text-muted">
+                      {{ Auth::user()->type }}
+                  </span>
               <!-- </router-link> -->
             </a>
           </div>
@@ -94,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
 
             </li>
-
+            @can('isAdmin')
             <li class="nav-item">
               <router-link to="#" active-class="active" class="nav-link">
                 <i class="nav-icon fas fa-cog orange"></i>
@@ -111,14 +114,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="/UnderConstruct" active-class="active" class="nav-link">
-                    <i class="fas fa-wrench nav-icon yellow"></i>
-                    <p>UnderConstruct</p>
+                  <router-link to="/developer" active-class="active" class="nav-link">
+                    <i class="fas fa-cogs nav-icon yellow"></i>
+                    <p>Developer</p>
                   </router-link>
                 </li>
               </ul>
             </li>
-
+            @endcan
 
             <li class="nav-item">
               <router-link to="/profile" active-class="active" class="nav-link">
@@ -187,17 +190,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Default to the left -->
       <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
-  </div>
-  <!-- ./wrapper -->
-
-  <!-- REQUIRED SCRIPTS -->
-
-  <!-- jQuery -->
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-</body>
+    </div>
+    <!-- ./wrapper -->
+    
+      @auth
+      <script>
+          window.user = @json(auth()->user())
+      </script>
+      @endauth
+    
+   
+    <!-- REQUIRED SCRIPTS -->
+    
+    <!-- jQuery -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </body>
 
 </html>

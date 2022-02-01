@@ -6,11 +6,11 @@
                     <!-- Add the bg color to the header using any of the bg-* classes -->
                     <div class="widget-user-header bg-warning">
                         <div class="widget-user-image">
-                            <!-- <img
+                            <img
                                 class="img-circle elevation-2"
                                 :src="getProfilePhoto()"
                                 alt="User Avatar"
-                            /> -->
+                            />
                         </div>
                         <!-- /.widget-user-image -->
                         <h3 class="widget-user-username">
@@ -263,13 +263,13 @@ export default {
     },
 
     methods: {
-        // getProfilePhoto() {
-        //     let photo =
-        //         this.form.photo.length > 200
-        //             ? this.form.photo
-        //             : "images/profile/" + this.form.photo;
-        //     return photo;
-        // },
+        getProfilePhoto() {
+            let photo =
+                this.form.photo.length > 200
+                    ? this.form.photo
+                    : "images/profile/" + this.form.photo;
+            return photo;
+        },
         updateInfo() {
             this.$Progress.start();
             if (this.form.password == "") {
