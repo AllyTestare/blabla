@@ -1,17 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="vh-100 gradient-custom">
+<section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-8">
-                <div class="card-body p-4 text-center">
-                    <div class="card bg-dark text-white" style="border-radius: 2rem;">
+            <div class="col-10 col-md-0 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
 
                         <div class="card-body p-5 text-center">
-                            <h3 style="font-size:20px" class="text-center text-mute fw-bold mt-5 mb-0">
-                                {{ __('Forgot your password? No problem - Just let us know your email address and we will email you a password reset link.') }}
-                            </h3>
+                        <h3 class="fw-bold mb-3 text-uppercase">{{ __('Forgot your password?') }}</h3>
+                        <p class="text-white-50 mb-2">{{ __('No problem - Just let us know your email address and we will email you a password reset link.') }}</p>
 
                             <!-- Session Status -->
                             <x-auth-session-status class="mb-4 mt-3 text-success" :status="session('status')" />
@@ -24,8 +22,8 @@
 
                                 <!-- Email Address -->
 
-                                <div class="form-group row mt-3">
-                                    <label for="email" class="col-sm-3 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right" style="white-space: nowrap; margin-right: 5px;">{{ __('E-Mail Address') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -48,8 +46,9 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
 </section>
+@endsection

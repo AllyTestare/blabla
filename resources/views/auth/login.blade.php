@@ -1,20 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="vh-100 gradient-custom">
+<section id="hero-area">
 
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-10 col-md-0 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white" style="border-radius: 2rem;">
+                <div class="card bg-dark text-white">
 
 
                     <div class="card-body p-5 text-center">
+
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
                         <h2 class="fw-bold mb-1 text-uppercase">{{ __('Login') }}</h2>
-                        <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                        <p class="text-white-50 mb-5">Please enter your credentials to proceed!</p>
                         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
+                            <!-- Email Address -->
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -29,6 +34,7 @@
                                 </div>
                             </div>
 
+                            <!-- Password -->
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -43,12 +49,12 @@
 
                                     @endif
                                 </div>
-                                <div class="col-md-9">
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password ?') }}</a>
+                                <div class="col-md-7 mt-2">
+                                    <a class="btn btn-link" style="text-decoration:none" href="{{ route('password.request') }}">{{ __('Forgot Your Password ?') }}</a>
                                 </div>
                             </div>
-
-                            <div class="form-group row">
+                            <!-- Remember Me -->
+                            <!-- <div class="form-group row">
                                 <div class="col-md-9">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -58,7 +64,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
@@ -75,7 +81,7 @@
                             </div>
 
                             <div>
-                                <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/register" class="text-20 fw-bold">Sign Up</a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a style="text-decoration:none" href="/register" class="text-20 fw-bold">Register</a></p>
                             </div>
                         </form>
                     </div>

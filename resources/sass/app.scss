@@ -27,19 +27,16 @@ $fa-font-path: "../webfonts";
 
 .gradient-custom {
     /* fallback for old browsers */
-    background: #6a11cb;
+    background: linear-gradient(117deg, rgba(32,31,56,1) 51%, rgba(6,60,106,1) 100%, rgba(252,176,69,1) 100%);
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(
-        to right,
-        rgba(106, 17, 203, 1),
-        rgb(143, 36, 175)
-    );
+    background: linear-gradient(117deg, rgba(32,31,56,1) 51%, rgba(6,60,106,1) 100%, rgba(252,176,69,1) 100%);
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(
-        to right,
-        rgba(106, 17, 203, 1),
-        rgb(143, 36, 175)
-    );
+    // background: linear-gradient(
+    //     to right,
+    //     rgb(195, 190, 201),
+    //     rgb(37, 32, 39)
+    // );
+    background: linear-gradient(117deg, rgba(32,31,56,1) 51%, rgba(6,60,106,1) 100%, rgba(252,176,69,1) 100%);
 }

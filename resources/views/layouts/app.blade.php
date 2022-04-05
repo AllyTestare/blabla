@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'ALLYBABA') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,11 +21,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <a class="brand-link" href="{{ url('/') }}">
-                    <img src="./images/logoD.png" alt="Daliran Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="brand-text font-weight-light">Ally Vote</span>
+                    <img class="logo-1 mt-4" src="images/logo-2.png" alt="LOGO">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="vh-100 gradient-custom">
+<section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-8">
-                <div class="card-body p-4 text-center">
-                    <div class="card bg-dark text-white" style="border-radius: 2rem;">
+            <div class="col-10 col-md-0 col-lg-6 col-xl-5">
+
+                    <div class="card bg-dark text-white">
 
                         <div class="card-body p-5 text-center">
 
@@ -20,8 +20,8 @@
                                 <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                                 <!-- Email Address -->
-                                <div class="form-group row mt-3">
-                                    <label for="email" class="col-sm-3 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-4 col-form-label text-md-right" style="white-space: nowrap; margin-right: 5px;">{{ __('E-Mail Address') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -36,7 +36,7 @@
 
                                 <!-- Password -->
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-3 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <label for="password" class="col-sm-4 col-form-label text-md-right" style="white-space: nowrap; margin-right: 5px;">{{ __('Password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -54,13 +54,14 @@
                                 <!-- Confirm Password -->
                                 <div class="form-group row">
 
-                                    <label for="password_confirmation" class="col-md-3 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    <label for="password_confirmation" class="col-sm-4 col-form-label text-md-right" style="white-space: nowrap; margin-right: 5px;">{{ __('Confirm Password') }}</label>
 
                                     <div class="col-md-6">
 
                                         <input id="password_confirmation" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" required>
                                     </div>
                                 </div>
+
                                 <div class="form-group row mb-0">
                                     <div class="col-md-12 mt-3">
                                         <button type="submit" class="btn btn-outline-light btn-lg px-5">
@@ -69,6 +70,8 @@
                                     </div>
                                 </div>
                             </form>
+                                        <!-- Session Status -->
+                                        <x-auth-session-status class="mb-4 mt-3 text-success" :status="session('status')" />
                         </div>
                     </div>
                 </div>
@@ -76,3 +79,4 @@
         </div>
     </div>
 </section>
+@endsection
